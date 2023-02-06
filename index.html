@@ -12,7 +12,7 @@
   <meta property="og:url" content="">
   <meta property="og:image" content="">
 
-  <link rel="manifest" href="site.webmanifest">
+  <!--  <link rel="manifest" href="site.webmanifest">-->
   <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
 
@@ -24,18 +24,76 @@
 
 <body>
 
-  <!-- Add your site or application content here -->
-  <p>Sense - волшебные танцы12.</p>
-  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
+<!-- Add your site or application content here -->
+<p>Sense - волшебные танцы.</p>
 
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
+<section class="manifest is-inview" data-theme="night" data-scroll="explore" data-v-cdbc1c14=""><span
+  class="gradient _desktop is-inview" data-scroll="" data-scroll-sticky="" data-scroll-target=".manifest"
+  data-scroll-position="top" data-v-cdbc1c14=""
+  style="transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);"></span>
+  <div class="row limiter" data-v-cdbc1c14="">
+    <div class="left _desktop" data-v-cdbc1c14="">
+      <div class="sticky is-inview" data-scroll="" data-scroll-sticky="" data-scroll-target=".limiter"
+           data-scroll-offset="-125, 125" data-scroll-position="bottom" data-v-cdbc1c14=""
+           style="transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);">
+        <div class="UIVideo media" data-cover="cover" data-full="false" data-embed="false" data-v-7caf0ca6=""
+             data-v-cdbc1c14=""><!----><!---->
+        </div>
+      </div>
+    </div>
+    <div class="right" data-v-cdbc1c14=""><p class="subtitle" data-v-cdbc1c14=""
+                                             style="opacity: 1; transform: translate(0px, 0px);">Manifest</p>
+      <h2 class="title" data-v-cdbc1c14="" style="">
+        <p class="description" id="manifest" data-v-cdbc1c14="" style="opacity: 1; transform: translate(0px, 0px);">
+          Sense is a123123123123
+          movement created by the Regroupement québécois de la danse to shine a light on the importance of this artistic
+          discipline in a lively, accessible environment throughout the province. Find local artists, opportunities, and
+          productions all in one place.</p>
+      </h2>
+    </div>
+    <span class="icon _desktop is-inview" data-scroll="" data-scroll-speed="0.2" data-scroll-direction="horizontal"
+          data-v-cdbc1c14="" style="transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);">
+    S
+</span>
+  </div>
+</section>
+
+
+<script src="js/vendor/modernizr-3.11.2.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+<script src="js/main.js"></script>
+<script type="module">
+
+  import SplitType from "split-type";
+
+  function runSplit() {
+    const text = new SplitType('#manifest', {types: 'lines, words'});
+    console.log(text.chars);
+
+    // const this_elem = document.getElementsByClassName('word');
+    // console.log(this_elem, 'this_elem');
+    // this_elem[0].insertAdjacentHTML('beforeend','<div class="char-line"></div>');
+  }
+
+  window.addEventListener('load', function () {
+    runSplit();
+  });
+</script>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+  window.ga = function () {
+    ga.q.push(arguments)
+  };
+  ga.q = [];
+  ga.l = +new Date;
+  ga('create', 'UA-XXXXX-Y', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('set', 'transport', 'beacon');
+  ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
 
 </html>
