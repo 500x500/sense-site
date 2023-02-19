@@ -1,14 +1,43 @@
-import SplitType from 'split-type'
+import SplitType from "split-type";
+import { gsap, ScrollTrigger } from "gsap/all";
 
+let text;
+let elems_array;
 function runSplit() {
-  const text = new SplitType('#manifest', {types: 'lines, words'});
-  console.log(text.chars);
-
-  const this_elem = document.getElementsByClassName('char');
-  this_elem.insertAdjacentHTML('beforeend','<div class="char-line"></div>');
+  text = new SplitType('#manifest', {types: 'lines, words'});
+  elems_array = document.querySelectorAll('.line');
+  elems_array.forEach(elem => {
+    elem.insertAdjacentHTML('beforeend', '<div class="line-mask"></div>');
+  });
+  runAnimation();
 }
 
-window.addEventListener('load', function () {
+runSplit();
+
+window.addEventListener('resize', function () {
+  text.revert();
   runSplit();
 });
-// console.log(text.chars);
+
+function runAnimation() {
+  gsap.registerPlugin(ScrollTrigger);
+  elems_array.forEach((elem) => {
+    let triggerElement = elem;
+    let targetElement = elem.querySelector('.line-mask');
+
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: triggerElement,
+        start: "top center",
+        end: "bottom center",
+        scrub: 1
+      }
+    });
+    tl.to(targetElement, {
+      width: 0,
+      opacity: 0,
+      duration: 2
+    });
+  });
+}
+
