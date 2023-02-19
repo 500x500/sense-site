@@ -19,6 +19,7 @@ window.addEventListener('resize', function () {
   runSplit();
 });
 
+// TODO переписать на символы (но там алгоритм о^2 будет)
 function runAnimation() {
   gsap.registerPlugin(ScrollTrigger);
   elems_array.forEach((elem) => {
@@ -36,7 +37,7 @@ function runAnimation() {
     tl.to(targetElement, {
       width: 0,
       opacity: 0,
-      duration: 2
+      duration: 1
     });
   });
 }

@@ -220,3 +220,27 @@ textarea {
   width: 100%;
   z-index: 2;
 }
+
+ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  background-color: #ffffff;
+}
+
+
+.link {
+  position: relative;
+  z-index: 5;
+  display: block;
+  /*border: 0;*/
+  box-shadow: none;
+  background: 0 0;
+  border-radius: 90px;
+  padding: 22.5px 35px;
+  color: #161616;
+  font-family: Neue, Arial, Helvetica, sans-serif;
+  line-height: 1.1875;
+  font-size: clamp(15px, 1.142857142857143vw, 100vw);
+  transition: all .4s cubic-bezier(.77, .2, .05, 1);
+}
