@@ -2,8 +2,6 @@ import SplitType from "split-type";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-
-
 let text;
 let elems_array;
 function runSplit() {
@@ -45,7 +43,6 @@ function runAnimation() {
   });
 }
 
-// gsap.registerPlugin(ScrollTrigger);
 
 gsap.utils.toArray("[data-speed]").forEach(el => {
   gsap.to(el, {
@@ -60,20 +57,3 @@ gsap.utils.toArray("[data-speed]").forEach(el => {
     }
   });
 });
-
-gsap.from('.left', {
-  // opacity: 0,  // Works with changing opacity
-  yPercent: 100, // But dont works with changing positon
-  scrollTrigger: '.manifest',
-}).startTime()
-
-// ScrollTrigger.refresh() // Tried to use refresh(), but it doesn't helps
-ScrollTrigger.create({
-  trigger: '.manifest',
-  start: '0 top',
-  endTrigger: '.last',
-  end: 'bottom bottom',
-  pinReparent: true,
-  markers: false,
-  pin: '.sticky',
-})

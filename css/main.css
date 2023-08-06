@@ -23,12 +23,29 @@ body {
 
 .box-container {
   position: relative;
-  /*display: flex;*/
-  /*justify-content: center;*/
-  /*flex: 1;*/
-  /*width: 100%;*/
-  /*overflow: visible;*/
-  /*height: 100vh;*/
+}
+
+.gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 115px;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.gradient:before {
+  content: "";
+  bottom: 0;
+  left: 0;
+  transform: rotate(180deg);
+  transition: all .7s cubic-bezier(.77,.2,.05,1);
+}
+.gradient:before {
+  filter: none;
+  opacity: 1;
+  background-image: linear-gradient(180deg, rgba(250, 221, 138, 0) 0%, rgba(250, 221, 138, 1) 100%);
 }
 
 .container {
@@ -38,78 +55,24 @@ body {
 
 .heading {
   position: absolute;
-  top: 10vh;
+  top: 20vh;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .heading p {
-  font-size: clamp(12px, 15.5vw, 250px);
+  cursor: default;
+  font-family: 'Nunito Sans', sans-serif;
   font-size: 20vw;
+  paint-order: stroke fill;
   text-align: center;
-  line-height: 0.67;
+  line-height: 0.9;
   margin: 0;
   color: #111;
   -webkit-text-stroke-width: 1.5px;
   -webkit-text-stroke-color: white;
   z-index: -10;
 }
-
-.text-container {
-  position: relative;
-}
-
-.text-container p {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 999;
-  color: transparent;
-}
-.just-feel {
-  font-size: 5vw !important;
-}
-
-.text-container p:first-child {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 999;
-  color: white;
-}
-
-
-.box {
-  font-size: 100px;
-  font-weight: 700;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  top: 50vh;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-  position: absolute;
-}
-
-.box:first-child  {
-  color: white;
-  z-index: 999;
-  position: absolute;
-  font-size: 100px;
-}
-.box {
-    font-size: 100px;
-    position: absolute;
-    z-index: 999;
-    color: transparent;
-    -webkit-text-stroke-width: 1.5px;
-    -webkit-text-stroke-color: white;
-}
-
 
 .text-container {
   position: relative;
@@ -125,6 +88,10 @@ body {
   right: 0;
   z-index: 999;
   color: transparent;
+}
+
+.just-feel {
+  font-size: 5vw !important;
 }
 
 .text-container p:first-child {
@@ -216,12 +183,6 @@ textarea {
 .clearfix::after {
   clear: both;
 }
-
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
 
 @media only screen and (min-width: 35em) {
   /* Style adjustments for viewports that meet the condition */
@@ -320,13 +281,14 @@ textarea {
   -ms-align-items: flex-start;
   align-items: flex-start;
   border-radius: 80px;
+  width: 90%;
 }
 
 .description {
   color: #fff;
   width: 23.214285714285715vw;
   margin-left: auto;
-  transition: color .7s cubic-bezier(.77,.2,.05,1);
+  transition: color .7s cubic-bezier(.77, .2, .05, 1);
 }
 
 .icon {
@@ -350,33 +312,25 @@ textarea {
   z-index: 2;
 }
 
-ul {
-  display: flex;
-  flex-direction: row;
-  list-style: none;
-  background-color: #ffffff;
-  padding: 0;
-  border-radius: 90px;
-}
-
-ul li {
+a {
   transition: 0s background-color;
 }
 
-ul li:hover{
+.link:hover {
   color: white;
   background-color: #faadff;
-  transition-delay:0.001s;
+  transition-delay: 0.001s;
   border-radius: 90px;
 }
 
 .right {
-  padding-left: 132px;
+  padding-left: 30px;
 }
 
 
 .link {
   position: relative;
+  text-decoration: none;
   z-index: 5;
   display: block;
   border: 0;
@@ -392,13 +346,13 @@ ul li:hover{
 }
 
 .sticky {
-  width: 23.214285714285715vw;
+  width: 25vw;
   position: relative;
-  background: red;
   border-radius: 230px;
   overflow: hidden;
   transform: translateZ(0);
   z-index: 11;
+  margin-left: 10px;
 }
 
 .row {
@@ -409,17 +363,7 @@ ul li:hover{
   -ms-align-items: flex-start;
   align-items: flex-start;
   z-index: 10;
-  padding-right: 132px;
-}
-
-.navigation ul {
-
-  /*position: absolute;*/
-  /*z-index: 12;*/
-  /*top: 20px;*/
-  /*left: 50%;*/
-  /*transform: translate(-50%, 0);*/
-  /*right: auto;*/
+  /*padding-right: 132px;*/
 }
 
 .theHeader {
@@ -432,5 +376,17 @@ ul li:hover{
   right: 0;
   width: 100vw;
   z-index: 15;
+}
+
+.navigation {
+  display: flex;
+  background: white;
+  text-decoration: none;
+  border-radius: 90px;
+}
+
+
+.halls {
+  height: 100vh;
 }
 
